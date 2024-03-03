@@ -247,5 +247,26 @@ Class Loader SusSystem
    2. 反射：体现的是能否调用的问题。因为类的完整结构都加载到了内存中，所以我们有能力进行调用。
 
 
+## 复习
+### 反射的优点🆚缺点
+优点:
+* 提高了灵活性和扩展性，降低了耦合性，提高了自适应能力
+* 允许程序创建和控制任何类的对象，无需提前硬编码目标类
+
+缺点:
+* 反射的性能较低
+* 反射机制主要应用在对灵活性和扩展性要求很高的系统构架上
+* 反射会模糊程序内部逻辑，可读性较差
+
+**在一般开发中，反射使用的并不多，主要是在框架底层的使用较多。**
+
+
+## Others
+* RTTI: Run-Time Type Identification, 运行时类型识别
+* 
+
 ## Reference
 * [188 反射机制 反射、Class的理解与获取Class实例的方式](https://www.youtube.com/watch?v=mV-ZP2WIfyE&list=PLmOn9nNkQxJG_AbAUeyAPH3fO0i_APAM9&index=188)
+* [Java 基础 - 反射机制详解](https://pdai.tech/md/java/basic/java-basic-x-reflection.html)
+* [java.lang.Class<T>](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html)
+* [Package java.lang.reflect](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/reflect/package-summary.html)
