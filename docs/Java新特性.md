@@ -1,7 +1,7 @@
 # Java新特性
 ![](images/NewFeatures.Java8.png)
 
-Java版本发布特点: 小步快跑，快速迭代
+**Java版本发布特点: 小步快跑，快速迭代**
 * Java5.0   最重要的里程碑式版本
 * Java8.0   第二重要的里程碑式版本
 * Java9.0   从9.0开始，每半年更新一次
@@ -27,7 +27,7 @@ LTS(Long-term Support): 长期支持。
 
 `Lambda形参列表 -> Lambda体`
 
-### Lambda表达式的本质
+### 1.1 Lambda表达式的本质
 ```java
 Comparator<Integer> comparator1 = (o1, o2) -> {
             System.out.println(o1);
@@ -36,27 +36,27 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
         };
 ```
 1. 一方面，Lambda表达式作为**接口**实现类的对象 --> 万事万物皆对象
-   * 这些接口只有一个方法
+   * 这些接口只有一个方法, 即**函数式接口**
 2. 两一方面，Lambda表达式是一个匿名函数
 
-### 函数式接口
+### 1.2 函数式接口
 1. 如果接口中只有一个抽象方法，则此接口就被称为函数式接口。
 2. 因为只有给函数式接口提供实现类的对象时，我们才可以使用Lambda表达式。`@FunctionalInterface`
 
-### JDK API中函数式接口的包
+### 1.3 JDK API中函数式接口的包
 > Functional interfaces provide target types for lambda expressions and method references. Each functional interface has a single abstract method, called the functional method for that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
 * [Package java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
 
-### 常见的函数式接口: 四大核心函数式接口
+### ✅1.4 常见的函数式接口: 四大核心函数式接口
 1. Consumer<T>: 消费型接口, `void accept(T t)`
 2. Supplier<T>: 供给型接口, `T get()`
 3. Function<T, R>: 函数型接口, `R apply(T t)`
 4. Predicate<T>: 判断型接口, `boolean test(T t)`
 
-### Lambda表达式语法规则总结
+### 1.5 Lambda表达式语法规则总结
 * 左边: Lambda的形参列表，参数的类型可以省略。如果形参只有一个，则()也可以省略
 * 右边: Lambda体，对应着重写的方法的方法提。如果方法体中只有一行执行语句，则{}可以省略，如果有return关键字，则必须一并省略。
-* ⚠️Code Reference: package `com.atguigu.lambda`
+* ⚠️Code Reference: [package `com.atguigu.lambda`](../src/main/java/com/atguigu/lambda)
 
 
 ## 2. 方法引用 & 构造器引用
@@ -76,7 +76,7 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
    3. 类::实例方法
       * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**对象的**某个`方法b`的返回值类型一致，同时，抽象方法a的第一个参数作为方法b的调用者，且抽象方法a的后N-1个参数与方法b的N-1个参数的类型相同or一致，则可以考虑使用方法b实现对抽象方法a的替换/覆盖。此替换/覆盖即为方法引用。
       * ⚠️注意: 此方法b是非静态方法，需要对象调用。但是形式上，写成对象a所属的类
-5. :white_check_mark: Code Reference: package `com.atguigu.reference`
+5. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
 
 ### 2.2 构造器引用
 1. 将构造器引用看作特殊的方法引用。
@@ -84,11 +84,11 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
 3. 说明:
    1. 调用了类名对应的类中的某一个确定的构造器
    2. 具体调用的是类中的哪一个构造器？取决于函数式接口的抽象方法的形参列表。
-4. :white_check_mark: Code Reference: package `com.atguigu.reference`
+4. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
 
-### 3. 数组引用
+### 2.3 数组引用
 1. 格式: `数组类型[]::new`
-2. :white_check_mark: Code Reference: package `com.atguigu.reference`
+2. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
 
 
 ## 3. Stream API
@@ -140,7 +140,7 @@ Stream是数据渠道，用于操作数据源（集合、数组等）所生成�
       * `sorted(Comparator cmp)` 产生一个新Stream，按照比较器排序
 3. 执行终止操作: 
    * 终端操作会从stream的流水线生成结果。其结果可以是任何不是流的值，例如: List, Integer, 甚至是void。
-   * 当stream进行了终止操作后，不能再次使用。
+   * **当stream进行了终止操作后，不能再次使用。**
    1. 匹配与查找
       * `allMatch(Predicate p)`
       * `anyMatch(Predicate p)`
