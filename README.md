@@ -6,3 +6,4 @@
   * [Lambda表达式](docs/Java新特性.md#1-lambda表达式)
   * [方法引用(Method Reference) & 构造器引用(Constructor Reference)](docs/Java新特性.md#2-方法引用--构造器引用)
   * [Stream API](docs/Java新特性.md#3-stream-api)
+* [Others](docs/Others.md)
