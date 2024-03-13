@@ -21,7 +21,7 @@ public class DeadLockTest1 {
                     s2.append("1");
 
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(10);  // 便于演示死锁问题
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -43,7 +43,7 @@ public class DeadLockTest1 {
                 s2.append("3");
 
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(100);  // 便于演示死锁问题
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -2,6 +2,8 @@ package com.atguigu.thread.deadlock;
 
 /**
  * Description:
+ *  1. 使用继承Thread类的方式，实现卖票
+ *  2. 没有机制确保线程安全，会出现错票和重复票的问题
  *
  * @Author: ylqi007
  * @Create: 3/12/24 00:40
@@ -27,8 +29,8 @@ public class DeadLockTest2 implements Runnable {
 
     public static void main(String[] args) {
         DeadLockTest2 deadLock = new DeadLockTest2();
-        new Thread(deadLock).start();
-        deadLock.init();
+        new Thread(deadLock).start();   // 分线程调用deadLock.run()
+        deadLock.init();    // 主线程调用deadLock.init()
     }
 }
 
