@@ -1,4 +1,4 @@
-package com.atguigu.chap13generic;
+package com.atguigu.chap13generic.use;
 
 import org.junit.jupiter.api.Test;
 

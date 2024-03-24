@@ -1,4 +1,4 @@
-package com.atguigu.chap13generic.exer2;
+package com.atguigu.chap13generic.use.exer2;
 
 import java.util.ArrayList;
 import java.util.Iterator;

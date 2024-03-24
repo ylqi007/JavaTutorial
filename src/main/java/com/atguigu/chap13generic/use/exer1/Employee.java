@@ -1,4 +1,4 @@
-package com.atguigu.chap13generic.exer1;
+package com.atguigu.chap13generic.use.exer1;
 
 import lombok.Getter;
 import lombok.Setter;
