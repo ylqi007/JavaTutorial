@@ -22,8 +22,9 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
-        return Objects.equals(name, student.name) && Objects.equals(age, student.age);
+        // if (!(o instanceof Student student)) return false;
+        // return Objects.equals(name, student.name) && Objects.equals(age, student.age);
+        return false;
     }
 
     @Override
