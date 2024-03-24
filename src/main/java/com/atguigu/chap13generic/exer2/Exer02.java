@@ -1,7 +1,5 @@
 package com.atguigu.chap13generic.exer2;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
@@ -47,6 +45,4 @@ public class Exer02 {
         }
     }
 
-    @Test
-    public void test2
 }

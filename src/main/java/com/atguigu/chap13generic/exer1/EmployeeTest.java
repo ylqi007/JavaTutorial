@@ -83,7 +83,6 @@ public class EmployeeTest {
         set.add(e4);
         set.add(e5);
 
-
         //遍历
         Iterator<Employee> iterator = set.iterator();
         while(iterator.hasNext()){
@@ -101,6 +100,12 @@ public class EmployeeTest {
                 return o1.getBirthday().compareTo(o2.getBirthday());
             }
         };
+
+        // 使用Lambda
+        Comparator<Employee> comparator1 = (o1, o2) -> (o1.getBirthday().compareTo(o2.getBirthday()));
+
+        // 使用Lambda + Method Reference
+        Comparator<Employee> comparator2 = Comparator.comparing(Employee::getBirthday);
     }
 
     private TreeSet<Employee> getTestData() {
