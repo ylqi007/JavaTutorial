@@ -112,6 +112,49 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 
 
 ## 6. 通配符的使用
+当我们声明一个变量/形参时，这个变量/形参的类型是一个范型类or范型接口，例如: `Comparator`类型，但是我们仍无法确定这个范型类or范型接口的类型变量的具体类型，此时可以考虑使用类型通配符`?`。
+
+### 6.1 通配符的理解
+比如: `List<?>`, `Map<?, ?>`。`List<?>`是`List<String>`,`List<Object>`等各类范型List的父类。
+
+### 6.2 通配符的读/写
+**写操作:** 将任意元素加入到其中是类型不安全的。
+```java
+Collection<?> collection = new ArrayList<String>();
+collection.add(new Object());   // 编译时错误
+```
+* 因为我们不知道`collection`的元素类型，我们不能向其中添加对象。`add()`方法有类型参数`E`作为集合的元素类型。我们传给`add()`的任何参数都必须是一个未知类型的子类。因为我们不知道那是什么类型，所以我们无法传任何东西进去。
+* 唯一可以插入的元素是`null`，因为它是所有引用类型的默认值。
+* Code reference: `com.atguigu.chap13generic.more.GenericTest1.test1`
+
+**读操作:** 读取`List<?>`的对象`list`中的元素时，永远是安全的，因为不管`list`的真实类型是什么，它包含的都是 `Object`。
+* Code reference: `com.atguigu.chap13generic.more.GenericTest1.test2`
+
+### 6.3 ⚠️ 使用注意点
+1. 编译错误: 不能用在泛型方法声明上，返回值类型前面`<>`不能使用`?`
+   * `public static <?> void test(ArrayList<?> list){ }`
+2. 编译错误：不能用在泛型类的声明上
+   * `class GenericTypeClass<?>{ }`
+3. 编译错误：不能用在创建对象上，右边属于创建集合对象
+   * `ArrayList<?> list2 = new ArrayList<?>();`
+
+### 6.4 有限制的通配符
+`<?>`
+* 允许所有泛型的引用调用
+
+通配符指定上限: `<? extends 类/接口>`
+* 使用时指定的类型必须是继承某个类，或者实现某个接口，即`<=`
+
+通配符指定下限: `<? super 类/接口>`
+* 使用时指定的类型必须是操作的类或接口，或者是操作的类的父类或接口的父接口，即`>=`
+
+说明:
+1. `<? extends Number>` //(无穷小 , Number]
+   * //只允许泛型为 Number 及 Number 子类的引用调用
+2. `<? super Number>` //[Number , 无穷大)
+   * //只允许泛型为 Number 及 Number 父类的引用调用
+3. `<? extends Comparable>`
+   * //只允许泛型为实现 Comparable 接口的实现类的引用调用
 
 
 ## Reference
