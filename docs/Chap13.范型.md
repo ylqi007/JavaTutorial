@@ -91,7 +91,6 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 ### 4.1 DAO
 * ORM: Object Relational Mapping
   * 数据库中的一个table与Java application中的一个类对应
-  * 
 
 ## 4. 使用说明
 集合框架在声明接口和其实现类时，使用了范型(JDK5.0)。
@@ -101,6 +100,18 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 
 ## Type Inference(类型推断)
 > **Type inference** is a Java compiler's ability to look at each method invocation and corresponding declaration to determine the type argument (or arguments) that make the invocation applicable.
+
+
+## 5. 范型在继承中的体现
+* 如果`B`是`A`的一个子类型(子类or子接口)，而`G<E>`是具有范型声明的类or接口，但`G<B>`并不是`G<A>`的子类性，它们是并列的，没有任何子父类的关系。
+  * Code reference: `com.atguigu.chap13generic.more.GenericTest.test2`
+  * 比如，`ArrayList<Object>`和`ArrayList<String>`是两个不同的类，是并列关系，并没有子父类关系。
+* 类SuperA是类A的父类或接口，`SuperA<G>`与`A<G>`的关系: `SuperA<G>`与`A<G>`有继承或实现的关系。
+  * Code reference: `com.atguigu.chap13generic.more.GenericTest.test4`
+  * 比如，`List<String>`和`ArrayList<String>`之间存在继承关系。
+
+
+## 6. 通配符的使用
 
 
 ## Reference
