@@ -17,9 +17,9 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 2. 问题2：**需要使用强转操作**，繁琐。还有可能导致`ClassCastException`异常。
 
 ## 2. 在集合、比较器中使用泛型 (重点)
-* 范型在集合中的使用: `com.atguigu.chap13generic.use.CollectionMapTest`
-* 范型在`Comparable`中的使用: `com.atguigu.chap13generic.use.exer1.Employee`
-* 范型在`Comparator`中的使用: `com.atguigu.chap13generic.use.exer1.EmployeeTest.test2`
+* 范型在集合中的使用: `com.ylqi007.chap13generic.use.CollectionMapTest`
+* 范型在`Comparable`中的使用: `com.ylqi007.chap13generic.use.exer1.Employee`
+* 范型在`Comparator`中的使用: `com.ylqi007.chap13generic.use.exer1.EmployeeTest.test2`
 
 ### 2.1 使用说明
 > 集合框架在声明接口和其实现类时，使用了泛型（jdk5.0），在实例化集合对象时，
@@ -49,19 +49,19 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 
 #### 3.2.1 说明
 1. 我们在声明完自定义泛型类以后，可以在类的内部（比如：属性、方法、构造器中）使用类的泛型。
-   * `com.atguigu.chap13generic.selfdefine.Order`中的属性`T t`
+   * `com.ylqi007.chap13generic.selfdefine.Order`中的属性`T t`
 2. 我们在创建自定义泛型类的对象时，可以指明泛型参数类型。一旦指明，内部凡是使用类的泛型参数的位置，都具体化为指定的类的泛型类型。
 3. 如果在创建自定义泛型类的对象时，没有指明泛型参数类型，那么泛型将被擦除，泛型对应的类型均按照 Object 处理，但不等价于Object。
-    * `com.atguigu.chap13generic.selfdefine.GenericTest.test2`
+    * `com.ylqi007.chap13generic.selfdefine.GenericTest.test2`
     * ✅ 经验：泛型要使用一路都用。要不用，一路都不要用。
 4. 泛型的指定中必须使用引用数据类型。不能使用基本数据类型，此时只能使用包装类替换。
-   * `com.atguigu.chap13generic.selfdefine.GenericTest.test2`
+   * `com.ylqi007.chap13generic.selfdefine.GenericTest.test2`
 5. 除创建泛型类对象外，子类继承泛型类时、实现类实现泛型接口时，也可以确定泛型结构中的泛型参数。
    1. 如果我们在给泛型类提供子类时，子类也不确定泛型的类型，则可以继续使用泛型参数。
-      * `com.atguigu.chap13generic.selfdefine.SubOrder3`
+      * `com.ylqi007.chap13generic.selfdefine.SubOrder3`
    2. 我们还可以在现有的父类的泛型参数的基础上，新增泛型参数。
-      * `com.atguigu.chap13generic.selfdefine.SubOrder4`
-      * `com.atguigu.chap13generic.selfdefine.SubOrder5`
+      * `com.ylqi007.chap13generic.selfdefine.SubOrder4`
+      * `com.ylqi007.chap13generic.selfdefine.SubOrder5`
 
 #### 3.2.2 ⚠️注意
 1. 泛型类可能有多个参数，此时应将多个参数一起放在尖括号内。比如：`<E1,E2,E3>`
@@ -83,8 +83,8 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 * 泛型方法可以根据需要，声明为 static 的。
 
 #### 3.3.2 举例
-* `com.atguigu.chap13generic.selfdefine.Order.method`
-* `com.atguigu.chap13generic.selfdefine.Order.copyFromArrayToList`: 范型方法可以是static
+* `com.ylqi007.chap13generic.selfdefine.Order.method`
+* `com.ylqi007.chap13generic.selfdefine.Order.copyFromArrayToList`: 范型方法可以是static
 
 
 ## 4. 应用
@@ -104,10 +104,10 @@ Java泛型可以保证如果程序在**编译时**没有发出警告，运行时
 
 ## 5. 范型在继承中的体现
 * 如果`B`是`A`的一个子类型(子类or子接口)，而`G<E>`是具有范型声明的类or接口，但`G<B>`并不是`G<A>`的子类性，它们是并列的，没有任何子父类的关系。
-  * Code reference: `com.atguigu.chap13generic.more.GenericTest.test2`
+  * Code reference: `com.ylqi007.chap13generic.more.GenericTest.test2`
   * 比如，`ArrayList<Object>`和`ArrayList<String>`是两个不同的类，是并列关系，并没有子父类关系。
 * 类SuperA是类A的父类或接口，`SuperA<G>`与`A<G>`的关系: `SuperA<G>`与`A<G>`有继承或实现的关系。
-  * Code reference: `com.atguigu.chap13generic.more.GenericTest.test4`
+  * Code reference: `com.ylqi007.chap13generic.more.GenericTest.test4`
   * 比如，`List<String>`和`ArrayList<String>`之间存在继承关系。
 
 
@@ -125,10 +125,10 @@ collection.add(new Object());   // 编译时错误
 ```
 * 因为我们不知道`collection`的元素类型，我们不能向其中添加对象。`add()`方法有类型参数`E`作为集合的元素类型。我们传给`add()`的任何参数都必须是一个未知类型的子类。因为我们不知道那是什么类型，所以我们无法传任何东西进去。
 * 唯一可以插入的元素是`null`，因为它是所有引用类型的默认值。
-* Code reference: `com.atguigu.chap13generic.more.GenericTest1.test1`
+* Code reference: `com.ylqi007.chap13generic.more.GenericTest1.test1`
 
 **读操作:** 读取`List<?>`的对象`list`中的元素时，永远是安全的，因为不管`list`的真实类型是什么，它包含的都是 `Object`。
-* Code reference: `com.atguigu.chap13generic.more.GenericTest1.test2`
+* Code reference: `com.ylqi007.chap13generic.more.GenericTest1.test2`
 
 ### 6.3 ⚠️ 使用注意点
 1. 编译错误: 不能用在泛型方法声明上，返回值类型前面`<>`不能使用`?`

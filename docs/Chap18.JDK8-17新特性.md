@@ -56,7 +56,7 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
 ### 1.5 Lambda表达式语法规则总结
 * 左边: Lambda的形参列表，参数的类型可以省略。如果形参只有一个，则()也可以省略
 * 右边: Lambda体，对应着重写的方法的方法提。如果方法体中只有一行执行语句，则{}可以省略，如果有return关键字，则必须一并省略。
-* ⚠️Code Reference: [package `com.atguigu.lambda`](../src/main/java/com/atguigu/lambda)
+* ⚠️Code Reference: [package `com.ylqi007.lambda`](../src/main/java/com/ylqi007/lambda)
 
 
 ## 2. 方法引用 & 构造器引用
@@ -76,7 +76,7 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
    3. 类::实例方法
       * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**对象的**某个`方法b`的返回值类型一致，同时，抽象方法a的第一个参数作为方法b的调用者，且抽象方法a的后N-1个参数与方法b的N-1个参数的类型相同or一致，则可以考虑使用方法b实现对抽象方法a的替换/覆盖。此替换/覆盖即为方法引用。
       * ⚠️注意: 此方法b是非静态方法，需要对象调用。但是形式上，写成对象a所属的类
-5. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
+5. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
 
 ### 2.2 构造器引用
 1. 将构造器引用看作特殊的方法引用。
@@ -84,11 +84,11 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
 3. 说明:
    1. 调用了类名对应的类中的某一个确定的构造器
    2. 具体调用的是类中的哪一个构造器？取决于函数式接口的抽象方法的形参列表。
-4. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
+4. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
 
 ### 2.3 数组引用
 1. 格式: `数组类型[]::new`
-2. :white_check_mark: Code Reference: [package `com.atguigu.reference`](../src/main/java/com/atguigu/reference)
+2. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
 
 
 ## 3. Stream API
