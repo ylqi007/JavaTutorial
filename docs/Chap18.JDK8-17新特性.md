@@ -36,27 +36,35 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
         };
 ```
 1. 一方面，Lambda表达式作为**接口**实现类的对象 --> 万事万物皆对象
+   * 左侧是一个接口类型的变量，右侧是一个接口的实现类。
    * 这些接口只有一个方法, 即**函数式接口**
-2. 两一方面，Lambda表达式是一个匿名函数
+2. 另一方面，Lambda表达式是一个匿名函数。
+   * `(o1, o2)`对应的是方法的形参。
+   * `{...}`对应的是方法的方法体。
+   * 整体就是一个函数，即匿名函数。==> 匿名函数也是一个对象
 
 ### 1.2 函数式接口
-1. 如果接口中只有一个抽象方法，则此接口就被称为函数式接口。
-2. 因为只有给函数式接口提供实现类的对象时，我们才可以使用Lambda表达式。`@FunctionalInterface`
+1. 如果接口中只有一个抽象方法，则此接口就被称为**函数式接口**。
+2. 因为只有给函数式接口提供实现类的对象时，我们才可以使用Lambda表达式。`@FunctionalInterface` (Since: 1.8)
+   * `public interface Runnable`
+   * `public interface Consumer<T>`
+   * `public interface Comparator<T>`
+   * ...
 
 ### 1.3 JDK API中函数式接口的包
 > Functional interfaces provide target types for lambda expressions and method references. Each functional interface has a single abstract method, called the functional method for that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
 * [Package java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
 
 ### ✅1.4 常见的函数式接口: 四大核心函数式接口
-1. Consumer<T>: 消费型接口, `void accept(T t)`
-2. Supplier<T>: 供给型接口, `T get()`
-3. Function<T, R>: 函数型接口, `R apply(T t)`
-4. Predicate<T>: 判断型接口, `boolean test(T t)`
+1. `Consumer<T>`: 消费型接口, `void accept(T t)`
+2. `Supplier<T>`: 供给型接口, `T get()`
+3. `Function<T, R>`: 函数型接口, `R apply(T t)`
+4. `Predicate<T>`: 判断型接口, `boolean test(T t)`
 
 ### 1.5 Lambda表达式语法规则总结
 * 左边: Lambda的形参列表，参数的类型可以省略。如果形参只有一个，则()也可以省略
-* 右边: Lambda体，对应着重写的方法的方法提。如果方法体中只有一行执行语句，则{}可以省略，如果有return关键字，则必须一并省略。
-* ⚠️Code Reference: [package `com.ylqi007.lambda`](../src/main/java/com/ylqi007/lambda)
+* 右边: Lambda体，对应着重写的方法的方法体。如果方法体中只有一行执行语句，则{}可以省略，如果有return关键字，则必须一并省略。
+* ⚠️Code Reference: [package](../NewFeatures//src/main/java/com/ylqi007/lambda)
 
 
 ## 2. 方法引用 & 构造器引用

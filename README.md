@@ -1,3 +1,6 @@
+## ⚠️ Node
+Make JavaTutorial as a parent project, therefore, its src is not a source module anymore. The contenct under `JavaTutorial/src/` need to be moved to other modules gradually.
+
 ## 目录
 * [Chap10 多线程](docs/Chap10.多线程.md)
 * [Chap12 Java集合框架](docs/Chap12.Java集合框架.md)

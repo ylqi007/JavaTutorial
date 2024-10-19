@@ -31,7 +31,7 @@ public class LambdaTest1 {
         r3.run();
     }
 
-    // 语法格式2: 需要一个参数，但无返回值
+    // 语法格式2: 需要一个参数，但无返回值，即Consumer类型的接口
     @Test
     public void test2() {
         Consumer<String> consumer = new Consumer<String>() {
@@ -42,6 +42,7 @@ public class LambdaTest1 {
         };
         consumer.accept("谎言和誓言的区别是什么？");
 
+        // 适用于只有一个抽象方法的接口
         System.out.println("********** Lambda表达式 ******************************");
         Consumer<String> consumer1 = (String s) -> System.out.println(s);  // 类型推断->省略类型，String s --> s
         consumer1.accept("一个是说的人当真了，一个是听的人当真了");
