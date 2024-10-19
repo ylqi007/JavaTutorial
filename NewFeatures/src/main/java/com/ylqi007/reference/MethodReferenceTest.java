@@ -21,7 +21,7 @@ public class MethodReferenceTest {
      */
     @Test
     public void test1() {
-        // 1.
+        // 1. 传统的写法
         Consumer<String> consumer = new Consumer<String>() {
             @Override
             public void accept(String s) {  // accept()方法的形参列表和返回值类型与System.out.println()的形参列别与返回值类型均一致
@@ -50,6 +50,7 @@ public class MethodReferenceTest {
     @Test
     public void test2() {
         Employee employee = new Employee(1001, "马化腾", 34, 6000.38);
+        // 1. 匿名实现类的写法
         Supplier<String> supplier = new Supplier<String>() {
             @Override
             public String get() {
@@ -63,9 +64,9 @@ public class MethodReferenceTest {
         Supplier<String> supplier1 = () -> employee.getName();
         System.out.println(supplier1.get());
 
-        // 3. Lambda + Method Ref
+        // 3. Lambda --> Method Reference
         System.out.println("********** Lambda表达式 + Method Ref *************************");
-        Supplier<String> supplier2 = employee::getName;
+        Supplier<String> supplier2 = employee::getName; // 对象::实例方法
         System.out.println(supplier2.get());
     }
 
@@ -76,7 +77,7 @@ public class MethodReferenceTest {
      */
     @Test
     public void test3() {
-        // 1. Traditional way
+        // 1. 匿名实现类的写法。Traditional way
         Comparator<Integer> comparator = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {    // compare()的形参列表和返回值类型与Integer.compare()的形参列表和返回值一致(包括多态的兼容)
@@ -90,7 +91,7 @@ public class MethodReferenceTest {
         Comparator<Integer> comparator1 = (o1, o2) -> Integer.compare(o1, o2);
         System.out.println(comparator1.compare(12, 12));
 
-        // 3. Lambda + Method Reference
+        // 3. Lambda --> Method Reference
         System.out.println("********** Lambda表达式 + Method Ref *************");
         Comparator<Integer> comparator2 = Integer::compare;
         System.out.println(comparator2.compare(12, 123));
@@ -100,7 +101,7 @@ public class MethodReferenceTest {
     // Math中的Long round(Double d)
     @Test
     public void test4() {
-        // 1. Traditional way
+        // 1. 匿名实现类的写法。Traditional way
         Function<Double, Long> function = new Function<Double, Long>() {
             @Override
             public Long apply(Double aDouble) {
@@ -111,7 +112,7 @@ public class MethodReferenceTest {
         // 2. Lambda 表达式
         Function<Double, Long> function1 = aDouble -> Math.round(aDouble);
 
-        // 3. Lambda + Method Ref
+        // 3. Lambda --> Method Reference
         Function<Double, Long> function2 = Math::round;
         System.out.println(function2.apply(11.3));
     }
@@ -136,7 +137,7 @@ public class MethodReferenceTest {
         Comparator<String> comparator1 = (s1, s2) -> s1.compareTo(s2);
         System.out.println(comparator1.compare("123", "abc"));
 
-        // 3. Lambda + Method Ref
+        // 3. Lambda --> Method Reference
         Comparator<String> comparator2 = String::compareTo;
         System.out.println(comparator2.compare("123", "1234"));
     }
@@ -158,7 +159,7 @@ public class MethodReferenceTest {
         BiPredicate<String, String> biPredicate1 = (s1, s2) -> s1.equals(s2);
         System.out.println(biPredicate1.test("abc", "abcd"));
 
-        // 3. Lambda + Method Ref
+        // 3. Lambda --> Method Reference
         BiPredicate<String, String> biPredicate2 = String::equals;
         System.out.println(biPredicate2.test("aaa", "bbb"));
     }
@@ -179,7 +180,7 @@ public class MethodReferenceTest {
         Function<Employee, String> function1 = emp -> emp.getName();
         System.out.println(function1.apply(employee));
 
-        // 3. Lambda + Method Ref
+        // 3. Lambda --> Method Reference
         Function<Employee, String> function2 = Employee::getName;
         System.out.println(function2.apply(employee));
     }

@@ -10,7 +10,7 @@ public class ArrayReferenceTest {
     // Function中的R apply(T t)
     @Test
     public void test1() {
-        // 1
+        // 1. 传统写法
         Function<Integer, Employee[]> function = new Function<Integer, Employee[]>() {
             @Override
             public Employee[] apply(Integer length) {
@@ -19,11 +19,11 @@ public class ArrayReferenceTest {
         };
         System.out.println(function.apply(10).length);
 
-        // 2.
+        // 2. Lambda
         Function<Integer, Employee[]> function1 = length -> new Employee[length];
         System.out.println(function1.apply(20).length);
 
-        // 3.
+        // 3. 数组引用
         Function<Integer, Employee[]> function2 = Employee[]::new;
         System.out.println(function2.apply(30).length);
     }

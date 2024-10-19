@@ -76,27 +76,27 @@ Comparator<Integer> comparator1 = (o1, o2) -> {
    1. `Comparator<Integer> comparator = Integer::compare;`
 4. 格式: 类(or对象)::方法名
    1. 对象::实例方法
-      * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**对象的**某个`方法b`的形参列表和返回值类型都相同(or一致)。此时可以考虑使用方法b实现对方法a的替换和覆盖。此替换或覆盖即为方法引用。
+      * 要求: 函数式接口A中的抽象`方法a`与其内部实现时调用的**对象B的**某个`方法b`的形参列表和返回值类型都相同(or一致)。此时可以考虑使用方法b实现对方法a的替换和覆盖。此替换或覆盖即为方法引用。即实例employee的`employee.getName()`代替了接口Supplier的`Supplier.get()`
       * ⚠️注意: 此方法b是非静态方法，需要对象调用。
    2. 类::静态方法
-      * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**类**的某个`静态方法b`的形参列表和返回值类型都相同(or一致)。此时可以考虑使用方法b实现对方法a的替换和覆盖。此替换或覆盖即为方法引用。
+      * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**类**的某个`静态方法b`的形参列表和返回值类型都相同(or一致)。此时可以考虑使用方法b实现对方法a的替换和覆盖。此替换或覆盖即为方法引用。即`Integer::compare`
       * ⚠️注意: 此方法b是**静态方法**，需要类调用。
    3. 类::实例方法
       * 要求: 函数式接口中的抽象`方法a`与其内部实现时调用的**对象的**某个`方法b`的返回值类型一致，同时，抽象方法a的第一个参数作为方法b的调用者，且抽象方法a的后N-1个参数与方法b的N-1个参数的类型相同or一致，则可以考虑使用方法b实现对抽象方法a的替换/覆盖。此替换/覆盖即为方法引用。
       * ⚠️注意: 此方法b是非静态方法，需要对象调用。但是形式上，写成对象a所属的类
-5. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
+5. ✅ Code Reference: [package `com.ylqi007.reference`](../NewFeatures/src/main/java/com/ylqi007/reference)
 
 ### 2.2 构造器引用
 1. 将构造器引用看作特殊的方法引用。
 2. 格式: `类名::new`
 3. 说明:
-   1. 调用了类名对应的类中的某一个确定的构造器
+   1. 调用了类名对应的类中的某一个**确定的**构造器
    2. 具体调用的是类中的哪一个构造器？取决于函数式接口的抽象方法的形参列表。
-4. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
+4. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../NewFeatures/src/main/java/com/ylqi007/reference)
 
 ### 2.3 数组引用
 1. 格式: `数组类型[]::new`
-2. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../src/main/java/com/ylqi007/reference)
+2. :white_check_mark: Code Reference: [package `com.ylqi007.reference`](../NewFeatures/src/main/java/com/ylqi007/reference)
 
 
 ## 3. Stream API
