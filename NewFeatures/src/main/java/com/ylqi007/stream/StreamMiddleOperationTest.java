@@ -25,11 +25,15 @@ public class StreamMiddleOperationTest {
         // 2. limit(n) 截断流，使其元素不超过给定数量
         // 因为stream已经执行了终止操作，就不可以再调用其他的中间操作or终止操作。
         // stream.limit(2).forEach(System.out::println);   // java.lang.IllegalStateException: stream has already been operated upon or closed, 需要创建新的stream
-        employees.stream().limit(4).forEach(System.out::println);
+        employees.stream()
+                .limit(4)
+                .forEach(System.out::println);
 
         System.out.println("**************************************************");
         // 3. skip(n) 跳过元素，返回一个扔掉N个元素的流，若流中元素不足N个，则返回一个空流。与limit(n)互补
-        employees.stream().skip(5).forEach(System.out::println);
+        employees.stream()
+                .skip(5)
+                .forEach(System.out::println);
 
         System.out.println("**************************************************");
         // 4. distict() 筛选，通过流中元素的hashCode()和equals()去除重复元素
@@ -37,7 +41,9 @@ public class StreamMiddleOperationTest {
         employees.add(new Employee(1009, "马斯克", 40, 4000.32));
         employees.add(new Employee(1009, "马斯克", 40, 4000.32));
         employees.add(new Employee(1009, "马斯克", 40, 4000.32));
-        employees.stream().distinct().forEach(System.out::println);
+        employees.stream()
+                .distinct()
+                .forEach(System.out::println);
     }
 
     /**
@@ -47,8 +53,12 @@ public class StreamMiddleOperationTest {
     public void test2() {
         // 转换成大写
         List<String> list = Arrays.asList("a", "bb", "ccc", "dddd");
-        list.stream().map(str -> str.toUpperCase()).forEach(System.out::println);
-        list.stream().map(String::toUpperCase).forEach(System.out::println);    // Method reference
+        list.stream()
+                .map(str -> str.toUpperCase())
+                .forEach(System.out::println);  // Lambda expression
+        list.stream()
+                .map(String::toUpperCase)
+                .forEach(System.out::println);    // Method reference
 
         System.out.println("**************************************************");
 
