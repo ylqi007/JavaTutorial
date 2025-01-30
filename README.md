@@ -15,6 +15,8 @@ Make JavaTutorial as a parent project, therefore, its src is not a source module
   * [其他(包含GC)](docs/Chap18.JDK8-17新特性.md#6-其他)
 * [Others](docs/Others.md)
 
+## Modules
+* [CodeCollections](./CodeCollections) 这个 module 主要用于收集一些常用的 code。
 
 ## Reference
 * [《Java从入门到精通(JDK17版)》_尚硅谷电子书](docs/《Java从入门到精通(JDK17版)》_尚硅谷电子书.pdf)
