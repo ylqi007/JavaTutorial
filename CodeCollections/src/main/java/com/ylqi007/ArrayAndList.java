@@ -53,4 +53,54 @@ public class ArrayAndList {
         List<Integer> list = new ArrayList<>();
         Collections.addAll(list, a);
     }
+
+    /**
+     * List --> Array
+     */
+    @Test
+    public void test04() {
+        List<Integer> list = new ArrayList<>();
+        Collections.addAll(list, new Integer[]{1,2,3,4,5});
+
+        int[] a = new int[list.size()];
+        int i = 0;
+        for (Integer d: list) {
+            a[i++] = d;
+        }
+
+        for (int j = 0; j < a.length; j++) {
+            System.out.println(a[j]);
+        }
+    }
+
+    @Test
+    public void test05() {
+        // 构建列表list, 并插入数据用于测试
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++){
+            list.add(i);
+        }
+
+        // List转Object[]
+        Object[] objs = list.toArray();
+
+        // Object[] 转Integer[]
+        Integer[] nums = Arrays.stream(objs).toArray(Integer[]::new);
+
+        // Integer[] 转int[]
+        int[] arr = Arrays.stream(nums).mapToInt(Integer::valueOf).toArray();
+    }
+
+    @Test
+    public void test06() {
+        // 构建列表list, 并插入数据用于测试
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++){
+            list.add(i);
+        }
+
+        int[] arr1 = list.stream().mapToInt(Integer::intValue).toArray();
+        // 也可以用下面的语句
+        int[] arr2 = list.stream().mapToInt(Integer::valueOf).toArray();
+    }
 }
