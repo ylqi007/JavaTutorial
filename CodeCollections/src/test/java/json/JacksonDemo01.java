@@ -1,8 +1,8 @@
-package com.ylqi007.json;
+package json;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ylqi007.json.data.Employee;
+import json.data.Employee;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.ylqi007.json.data;
+package json.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
