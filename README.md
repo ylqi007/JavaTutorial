@@ -14,6 +14,7 @@ Make JavaTutorial as a parent project, therefore, its src is not a source module
   * [新增、过时、删除的API](docs/Chap18.JDK8-17新特性.md#5-增加过时删掉的api)
   * [其他(包含GC)](docs/Chap18.JDK8-17新特性.md#6-其他)
 * [Others](docs/Others.md)
+* [Log4j2 的使用 & FAQ](docs/log)
 
 ## Modules
 * [CodeCollections](./CodeCollections) 这个 module 主要用于收集一些常用的 code。
