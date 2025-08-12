@@ -19,5 +19,10 @@ Make JavaTutorial as a parent project, therefore, its src is not a source module
 ## Modules
 * [CodeCollections](./CodeCollections) 这个 module 主要用于收集一些常用的 code。
 
+
 ## Reference
+* ✅ B站: [尚硅谷Java零基础全套视频教程(宋红康主讲，java入门自学必备)](https://www.bilibili.com/video/BV1PY411e7J6/)(2023版，基于JDK17)
+  * [《Java从入门到精通(JDK17版)》_尚硅谷电子书.pdf](%E5%AE%8B%E7%BA%A2%E5%BA%B7java%E5%9F%BA%E7%A1%80%E8%A7%86%E9%A2%91/%E3%80%8AJava%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%28JDK17%E7%89%88%29%E3%80%8B_%E5%B0%9A%E7%A1%85%E8%B0%B7%E7%94%B5%E5%AD%90%E4%B9%A6.pdf)
+  * GitHub: [xftxyz2001/atguigu-java](https://github.com/xftxyz2001/atguigu-java)
+* B站: [尚硅谷Java入门视频教程，宋红康java基础视频](https://www.bilibili.com/video/BV1Kb411W75N) (2019)
 * [《Java从入门到精通(JDK17版)》_尚硅谷电子书](docs/《Java从入门到精通(JDK17版)》_尚硅谷电子书.pdf)

@@ -37,11 +37,12 @@ java: package org.apache.logging.log4j does not exist
     </dependencies>
     ```
 2. **额外注意**
-    1. 必须同时有 API 和 Core：
-    * `log4j-api` 里是接口（编译需要）
-    * `log4j-core` 里是实现（运行需要） 
-    * 缺一个都会出错。
-   2. 配置文件（不配也能运行，但建议配置）：
+   1. 必须同时有 API 和 Core：
+      * `log4j-api` 里是接口（编译需要）
+      * `log4j-core` 里是实现（运行需要） 
+      * 缺一个都会出错。
+   2. 配置文件（不配也能运行，但建议配置）：在 `src/main/resources/log4j2.xml` 里定义日志格式。
+   3. 使用 Lombok `@Log4j2`
 
 
 ### 有无 `log4j-core` 的对比
@@ -87,6 +88,3 @@ org.apache.logging.log4j.core.LoggerContext
 2. 运行阶段：
    1. 需要一个实现(`log4j-core`, 或者桥接到 SLF4J，Logback 等)
    2. 没有实现时，有可能日志静默不输出。
-
-
-
